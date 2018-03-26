@@ -23,6 +23,25 @@ int linearSearch(auto data, auto key)//prototype
 	}//end for
 	return -1;//element not found
 }
+void insertionSort(auto& data)
+{
+	int nextIndex,moveIndex,insertVal;
+	for(nextIndex=1;nextIndex<data.size();nextIndex++)
+	{
+		insertVal=data[nextIndex];
+		moveItem=nextItem;
+		
+		while(moveItem>0 && data[moveItem-1]>insertVal)
+		{
+			data[moveItem]=data[moveItem-1]
+			moveItem--;
+			
+		}//end while
+		data[moveItem]=insertVal;
+		
+	}//end for 
+}//end function
+
 int main()
 {
   vector<string> inputs;
@@ -39,6 +58,7 @@ int main()
     {
        inputs.push_back(input);
        cin>>input;
+       
     }
 
    cout<<endl<<"["<<inputs.size()<<" values read from input source]"<<endl<<endl;
@@ -52,26 +72,12 @@ int main()
    cout<<endl<<"To end input type the #-character (followed by Enter)"<<endl<<endl;
   cout<<"Enter a value to search for: ";
 
-
-   cin>>search_key;
- 
-    while(search_key != "#")//perform searches until sentinel entered
-    {
-        result = linearSearch(inputs,search_key);
-
-        cout<<"  '"<<search_key<<"' was ";
-
-        if (result == -1)
-          cout<<"not found";
-        else
-          cout<<"found at index "<<result;
-
-
-        cout<<endl<<endl<<"Enter a value to search for: ";
-        cin>>search_key; 
-    }
-
-   cout<<endl<<"Program \"search it\" is now finished."<<endl<<endl;
+   
+   for(a=0;a<inputs.size();a++)
+   {
+	   cout<<inputs[a]<<" ";
+   }
+   
 
     return 0;
 }
